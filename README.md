@@ -1,5 +1,6 @@
-#1. KIP17Storage : Override => 컨트랙트에 직접 추가 (다중URI)
+#1. KIP17Storage : Override => 컨트랙트에 직접 추가해 다중URI 받을 수 있게 수정
 
+<br/>
 
 #2. TokenURI 구조체, TokenURI 맵핑 추가
 
@@ -8,8 +9,9 @@
         string URI_Trade;       // 토큰URI(거래용)
     }
 
-    mapping(uint256 => TokenURI) private _tokenURIs
+    mapping(uint256 => TokenURI) private _TokenURI;
 
+<br/>
 
 #3. CarDataWithTokenId 구조체 수정
 
@@ -26,6 +28,7 @@
         string URI_Trade;       // 토큰URI(거래용)
     }
 
+<br/>
 
 #4. getCarNFT( ), getOwnedTokenIds( ) 반환값 수정
 
