@@ -30,4 +30,5 @@
 #4. getCarNFT( ), getOwnedTokenIds( ) 반환값 수정
 
 (기존) CarData구조체+tokenURI 반환
+
 (변경) CarData구조체+TokenURI구조체 반환
