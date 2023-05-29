@@ -34,6 +34,7 @@
 (변경) CarData구조체+TokenURI구조체 반환
 
 
+
 #5. tokenURI( ) 함수 더 이상 작동안함
 
 (변경) _TokenURI[tokenId].URI_Register, _TokenURI[tokenId].URI_Trade 로 조회
