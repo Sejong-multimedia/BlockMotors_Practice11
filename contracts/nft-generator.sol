@@ -312,7 +312,7 @@ contract CarNFT_Generate is KIP17, Ownable {
     */
     function getTokenImageURI(uint256 tokenId) private view returns (string memory, string memory) {
         string memory model = _CarData[tokenId].model;
-        TokenURI storage tempTokenURI = _TokenURI[tokenId];
+        // TokenURI storage tempTokenURI = _TokenURI[tokenId];
         string memory tempTokenURI_Register;
         string memory tempTokenURI_Trade;
         if (compareModel(model, "Red")) {
@@ -331,25 +331,12 @@ contract CarNFT_Generate is KIP17, Ownable {
             tempTokenURI_Register = _defaultImageURI;
             tempTokenURI_Trade = _defaultImageURI;
         }
-        return (tempTokenURI.URI_Register, tempTokenURI.URI_Trade);
+        // return (tempTokenURI.URI_Register, tempTokenURI.URI_Trade);
+        return (tempTokenURI_Register, tempTokenURI_Trade);
     }
 
     function compareModel(string memory a, string memory b) private pure returns (bool) {
         return (keccak256(bytes(a)) == keccak256(bytes(b)));
-    }
-
-    function testTokenURI_Register(uint256 tokenId) public view returns (string memory) {
-        require(_exists(tokenId), "Token ID does not exist");
-
-        TokenURI storage tempTokenURI = _TokenURI[tokenId];
-        return tempTokenURI.URI_Register;
-    }
-
-    function testTokenURI_Trade(uint256 tokenId) public view returns (string memory) {
-        require(_exists(tokenId), "Token ID does not exist");
-
-        TokenURI storage tempTokenURI = _TokenURI[tokenId];
-        return tempTokenURI.URI_Trade;
     }
 
     /*
